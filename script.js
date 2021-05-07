@@ -58,7 +58,7 @@ message.style.height =
 
 // document.documentElement.style.setProperty("--color-primary", "orangered");
 
-////Smooth scroll old
+////Smooth scroll
 const btnScrollTo = document.querySelector(".btn--scroll-to");
 const section1 = document.querySelector("#section--1");
 
@@ -69,9 +69,12 @@ btnScrollTo.addEventListener("click", function (e) {
   //   s1coords.left + window.pageXOffset,
   //   s1coords.top + window.pageYOffset
   // );
-  window.scrollTo({
-    left: s1coords.left + window.pageXOffset,
-    top: s1coords.top + window.pageYOffset,
-    behavior: "smooth",
-  });
+  ///old way
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: "smooth",
+  // });
+  ////new way
+  section1.scrollIntoView({ behavior: "smooth" });
 });
