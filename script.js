@@ -45,3 +45,33 @@ document
   .addEventListener("click", function () {
     message.remove();
   });
+////Styles
+message.style.backgroundColor = "#37383d";
+message.style.width = "120%";
+
+////Show style props and values in console
+// console.log(getComputedStyle(message));
+// console.log(getComputedStyle(message).color);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 40 + "px";
+
+// document.documentElement.style.setProperty("--color-primary", "orangered");
+
+////Smooth scroll old
+const btnScrollTo = document.querySelector(".btn--scroll-to");
+const section1 = document.querySelector("#section--1");
+
+btnScrollTo.addEventListener("click", function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  //Scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+  window.scrollTo({
+    left: s1coords.left + window.pageXOffset,
+    top: s1coords.top + window.pageYOffset,
+    behavior: "smooth",
+  });
+});
