@@ -135,3 +135,20 @@ document.querySelector(".nav__links").addEventListener("click", function (e) {
     document.querySelector(id).scrollIntoView({ behavior: "smooth" });
   }
 });
+
+//DOM Traversing
+const h1 = document.querySelector("h1");
+
+//Going downwords:child
+console.log(h1.childNodes);
+h1.firstElementChild.style.color = "white";
+h1.lastElementChild.style.color = "black";
+//Going upwards:parents
+console.log(h1.parentNode);
+// h1.closest("h1").style.background = "var (--gradient-secondary)";
+//Going sideways: siblings
+console.log(h1.previousElementSibling);
+
+[...h1.parentElement.children].forEach(function (el) {
+  if (el !== h1) el.style.transform = "scale(0.9)";
+});
